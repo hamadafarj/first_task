@@ -1,0 +1,7 @@
+<svg id="clock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="Path_254" data-name="Path 254" d="M0,0H16V16H0Z" fill="none"/>
+  <g id="Group_309" data-name="Group 309" transform="translate(1 1)">
+    <circle id="Ellipse_41" data-name="Ellipse 41" cx="7" cy="7" r="7" fill="none" stroke="#5a55c9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_255" data-name="Path 255" d="M12,7v3.619l2.171,2.171" transform="translate(-6 -3)" fill="none" stroke="#5a55c9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
