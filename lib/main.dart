@@ -1,14 +1,15 @@
 import 'package:first_task/app/modules/home/view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:first_task/app/core/utils/messages';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,12 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return const GetMaterialApp(
+          return GetMaterialApp(
+              translations: Messages(),
+             locale: Get.deviceLocale,
               debugShowCheckedModeBanner: false,
               title: 'First task - desgin task',
-              home: Directionality(
-                textDirection: TextDirection.rtl,
-                child: HomePage(),
-              ));
+              home:const HomePage());
         });
   }
 }

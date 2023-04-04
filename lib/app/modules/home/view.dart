@@ -1,16 +1,19 @@
 import 'package:first_task/app/core/models/design_model.dart';
-import 'package:first_task/app/modules/desgin_order/view.dart';
+import 'package:first_task/app/modules/chat/view.dart';
+// import 'package:first_task/app/modules/home/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/card_widget.dart';
+import 'widgets/statistic_canvas_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // final myController = Get.find<MyController>();
     final List<DesignModel> myModels = [
       DesignModel(
           name: "Design 1",
@@ -55,7 +58,17 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              // if (Intl.getCurrentLocale() == "ar") {
+                              //   myController.changeLanguage("en", "US");
+                              // } else {
+                              //   myController.changeLanguage("ar", "PS");
+                              // }
+                              //       print("object ${Intl.getCurrentLocale() == "ar"}");
+                              // Intl.getCurrentLocale() == "ar"
+                              //     ? myController.changeLanguage("en", "US")
+                              //     : myController.changeLanguage("ar", "PS");
+                            },
                             icon: SvgPicture.asset(
                                 "assets/icons/language_icon.svg"))
                       ],
@@ -70,7 +83,8 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    " عدد التصاميم المتاحة هو  5",
+                    "hello".tr,
+                    //    " عدد التصاميم المتاحة هو  5".tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontFamily: 'Cairo',
@@ -93,14 +107,14 @@ class HomePage extends StatelessWidget {
                     ),
                     Expanded(
                         child: Container(
-                      height: 50.h,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            width: 2,
-                            color: const Color(0xff5A55C9),
-                          )),
-                    )),
+                            height: 50.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  width: 2,
+                                  color: const Color(0xff5A55C9),
+                                )),
+                            child:const StatisticCanvas(maxValue: 12, value: 7))),
                     SizedBox(
                       height: 50.h,
                       width: 50.w,
@@ -119,9 +133,10 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
-                      Get.to(() => const OrderDesgin());
+                      //  myController.changeLanguage("ar", "PS");
+                      // Get.to(() => const OrderDesgin());
                     },
                     child: Container(
                       width: 240.w,
@@ -181,9 +196,9 @@ class HomePage extends StatelessWidget {
                           CardWidget(
                             design: model,
                           ),
-                            SizedBox(
-                    height: 15.h,
-                  ),
+                          SizedBox(
+                            height: 15.h,
+                          ),
                         ],
                       );
                     },
@@ -192,6 +207,7 @@ class HomePage extends StatelessWidget {
               ),
             ]),
           ),
+          // MyBottomNavBarText()
           const MyBottomNavBar()
         ],
       ),
@@ -209,7 +225,6 @@ class MyBottomNavBar extends StatelessWidget {
       left: 20,
       right: 20,
       child: Container(
-        //  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: const Color(0xFFEAEAF8),
@@ -218,14 +233,18 @@ class MyBottomNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const HomePage());
+                },
                 icon: const Icon(
                   Icons.home,
                   size: 35,
                   color: Color(0xFF5A55C9),
                 )),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const ChatPage());
+                },
                 icon: const Icon(Icons.settings,
                     size: 35, color: Color(0xFF707070))),
           ],
