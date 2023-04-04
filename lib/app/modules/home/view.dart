@@ -1,5 +1,7 @@
 import 'package:first_task/app/core/models/design_model.dart';
 import 'package:first_task/app/modules/chat/view.dart';
+import 'package:first_task/app/modules/desgin_order/view.dart';
+import 'package:first_task/app/modules/home/controller.dart';
 // import 'package:first_task/app/modules/home/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final myController = Get.find<MyController>();
+    final myController = Get.find<MyController>();
     final List<DesignModel> myModels = [
       DesignModel(
           name: "Design 1",
@@ -59,15 +61,15 @@ class HomePage extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              // if (Intl.getCurrentLocale() == "ar") {
-                              //   myController.changeLanguage("en", "US");
-                              // } else {
-                              //   myController.changeLanguage("ar", "PS");
-                              // }
-                              //       print("object ${Intl.getCurrentLocale() == "ar"}");
-                              // Intl.getCurrentLocale() == "ar"
-                              //     ? myController.changeLanguage("en", "US")
-                              //     : myController.changeLanguage("ar", "PS");
+                              if (Get.locale?.languageCode == "ar") {
+                                myController.changeLanguage("en", "US");
+                                Get.updateLocale(const Locale('en'));
+                                Get.forceAppUpdate();
+                              } else {
+                                myController.changeLanguage("ar", "SA");
+                                Get.updateLocale(const Locale('ar'));
+                                Get.forceAppUpdate();
+                              }
                             },
                             icon: SvgPicture.asset(
                                 "assets/icons/language_icon.svg"))
@@ -76,15 +78,11 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "hello".tr,
-                    //    " عدد التصاميم المتاحة هو  5".tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontFamily: 'Cairo',
@@ -114,7 +112,8 @@ class HomePage extends StatelessWidget {
                                   width: 2,
                                   color: const Color(0xff5A55C9),
                                 )),
-                            child:const StatisticCanvas(maxValue: 12, value: 7))),
+                            child:
+                                const StatisticCanvas(maxValue: 12, value: 7))),
                     SizedBox(
                       height: 50.h,
                       width: 50.w,
@@ -135,8 +134,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      //  myController.changeLanguage("ar", "PS");
-                      // Get.to(() => const OrderDesgin());
+                      Get.to(() => const OrderDesgin());
                     },
                     child: Container(
                       width: 240.w,
@@ -205,6 +203,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 30.h,)
             ]),
           ),
           // MyBottomNavBarText()

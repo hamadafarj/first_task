@@ -1,4 +1,3 @@
-
 import 'package:first_task/app/core/models/design_model.dart';
 import 'package:first_task/app/modules/design_details/view.dart';
 import 'package:flutter/material.dart';
@@ -125,20 +124,25 @@ class CardWidget extends StatelessWidget {
           Positioned.fill(
             top: -170.h,
             bottom: 40.h,
-            left: -440.w,
+            left: Get.locale?.languageCode == "ar" ? -440.w : 0,
+            right: Get.locale?.languageCode == "ar" ? 0 : -440.w,
             child: Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color:design.isReceive?const Color(0XFF00A875):const Color(0xffDA1200),
+                color: design.isReceive
+                    ? const Color(0XFF00A875)
+                    : const Color(0xffDA1200),
               ),
             ),
           ),
           Positioned(
             top: 20.h,
-            left: 13.w,
-            child:  Text(
-             design.isReceive? "مستلم":"تعديل",
-              style:const TextStyle(
+            left: Get.locale?.languageCode == "ar"
+                ? 18
+                : MediaQuery.of(context).size.width * 0.86,
+            child: Text(
+              design.isReceive ? "مستلم" : "تعديل",
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
