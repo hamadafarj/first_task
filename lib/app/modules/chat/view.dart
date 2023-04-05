@@ -181,13 +181,10 @@ class _ChatPageState extends State<ChatPage> {
                     ],
                   ),
                   const Expanded(
-                    child: Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "اكتب رسالة هنا",
-                          border: InputBorder.none,
-                        ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "اكتب رسالة هنا",
+                        border: InputBorder.none,
                       ),
                     ),
                   ),

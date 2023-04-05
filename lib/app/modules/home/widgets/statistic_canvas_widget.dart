@@ -3,40 +3,40 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
-class StatisticPainter extends CustomPainter {
-  final int maxValue;
-  final int value;
+// class StatisticPainter extends CustomPainter {
+//   final int maxValue;
+//   final int value;
 
-  StatisticPainter({required this.maxValue, required this.value});
+//   StatisticPainter({required this.maxValue, required this.value});
 
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..style = PaintingStyle.fill
-      ..color = const Color(0xff343435);
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final paint = Paint()
+//       ..style = PaintingStyle.fill
+//       ..color = const Color(0xff343435);
 
-    final userPaint = Paint()
-      ..style = PaintingStyle.fill
-      ..color = const Color(0xffD168CD);
+//     final userPaint = Paint()
+//       ..style = PaintingStyle.fill
+//       ..color = const Color(0xffD168CD);
 
-    final barWidth = size.width / maxValue;
+//     final barWidth = size.width / maxValue;
 
-    for (var i = 0; i < maxValue; i++) {
-      final barHeight = i < value ? size.height : size.height * 0.75;
-      final barColor = i < value ? userPaint : paint;
+//     for (var i = 0; i < maxValue; i++) {
+//       final barHeight = i < value ? size.height : size.height * 0.75;
+//       final barColor = i < value ? userPaint : paint;
 
-      canvas.drawRect(
-        Rect.fromLTWH(i * barWidth, size.height - barHeight, barWidth, barHeight),
-        barColor,
-      );
-    }
-  }
+//       canvas.drawRect(
+//         Rect.fromLTWH(i * barWidth, size.height - barHeight, barWidth, barHeight),
+//         barColor,
+//       );
+//     }
+//   }
 
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) {
+//     return true;
+//   }
+// }
 
 class StatisticCanvas extends StatelessWidget {
   final int maxValue;

@@ -139,9 +139,9 @@ class CardWidget extends StatelessWidget {
             top: 20.h,
             left: Get.locale?.languageCode == "ar"
                 ? 18
-                : MediaQuery.of(context).size.width * 0.86,
+                : MediaQuery.of(context).size.width * 0.82,
             child: Text(
-              design.isReceive ? "مستلم" : "تعديل",
+              design.isReceive ? "recipient".tr : "edit".tr,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 14,

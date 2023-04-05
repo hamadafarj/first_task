@@ -2,7 +2,6 @@ import 'package:first_task/app/core/models/design_model.dart';
 import 'package:first_task/app/modules/chat/view.dart';
 import 'package:first_task/app/modules/desgin_order/view.dart';
 import 'package:first_task/app/modules/home/controller.dart';
-// import 'package:first_task/app/modules/home/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -53,7 +52,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          " أهلاً user name",
+                     "welcome_message".tr,
                           style: TextStyle(
                             fontSize: 20.sp,
                             fontFamily: 'Cairo',
@@ -82,7 +81,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "hello".tr,
+                    "number_desgin".tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontFamily: 'Cairo',
@@ -152,7 +151,7 @@ class HomePage extends StatelessWidget {
                           )),
                       child: Center(
                         child: Text(
-                          'اطلب تصميمك الآن ',
+                          'order_desgin'.tr,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.sp,
@@ -171,7 +170,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "التصاميم الحالية ",
+                    "current_desgin".tr,
                     style: TextStyle(
                         fontFamily: 'Cairo',
                         fontWeight: FontWeight.bold,
