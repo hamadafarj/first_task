@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return GetMaterialApp(
               translations: Messages(),
-              //  locale: Get.deviceLocale,
+               locale: Get.deviceLocale,
               debugShowCheckedModeBanner: false,
               title: 'First task - desgin task',
               home: const HomePage());
